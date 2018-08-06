@@ -1,4 +1,4 @@
-class Game
+class RPS
 
   def initialize(player_1, player_2)
       @player_1 = player_1
@@ -6,6 +6,6 @@ class Game
   end
 
   def result()
-    
+
   end
 end

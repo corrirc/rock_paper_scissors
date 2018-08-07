@@ -1,14 +1,17 @@
 require('sinatra')
 require('sinatra/contrib/all')
 require('pry-byebug')
-require_relative('models/RPS.rb')
 
-get("/game/:play1/:play2") do
+require_relative('models/rps.rb')
+
+also_reload('./models/rps')
+
+get("/play/:play1/:play2") do
   game = RPS.new(params["play1"], params["play2"])
-  @game_result = game.result()
-  erb(:result)
+  @game_play = game.play()
+  erb(:result )
 end
 
 get("/") do
-  erb(:welcome)
+  erb(:home)
 end
